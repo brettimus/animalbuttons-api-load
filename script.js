@@ -4,9 +4,9 @@ import { sleep, check } from "k6";
 export let options = {
     stages: [
       { duration: "1m", target: 1 },
-      { duration: "3m", target: 5 },
-      { duration: "3m", target: 8 },
-      { duration: "2m", target: 2 },
+      { duration: "5m", target: 2 },
+      { duration: "1m", target: 4 },
+      { duration: "3m", target: 3 },
       { duration: "1m", target: 0 }, // ramp down to 0 VUs during the last minute
     ],
 };
@@ -33,8 +33,8 @@ export default function () {
   makeRequestWithChance("https://api.animalbuttons.biz", 1); // 100% chance
 
   // Call specific APIs with certain chances
-  makeRequestWithChance("https://api.animalbuttons.biz/snail", 0.5); // 50% chance
-  makeRequestWithChance("https://api.animalbuttons.biz/rabbit", 0.2); // 20% chance
-  makeRequestWithChance("https://api.animalbuttons.biz/panda", 0.9); // 90% chance
-  makeRequestWithChance("https://api.animalbuttons.biz/beaver", 0.5); // 50% chance
+  makeRequestWithChance("https://api.animalbuttons.biz/snail", 0.85); // 85% chance
+  makeRequestWithChance("https://api.animalbuttons.biz/rabbit", 0.6); // 60% chance
+  makeRequestWithChance("https://api.animalbuttons.biz/panda", 0.5); // 50% chance
+  makeRequestWithChance("https://api.animalbuttons.biz/beaver", 0.4); // 40% chance
 }
