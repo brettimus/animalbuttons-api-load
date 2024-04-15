@@ -26,15 +26,14 @@ function makeRequestWithChance(url, chance) {
 }
 
 export default function () {
-  // Sleep for a random time between 100ms and 5s
-  sleep(randomDelay(0.1, 5));
-
+  // Sleep for a random time between 50ms and 300ms
+  sleep(randomDelay(0.05, 0.3));
   // Always fetch the main URL
-  makeRequestWithChance("https://api.animalbuttons.biz", 1); // 100% chance
+  // makeRequestWithChance("https://api.animalbuttons.biz", 1); // 100% chance
 
   // Call specific APIs with certain chances
-  makeRequestWithChance("https://api.animalbuttons.biz/snail", 0.85); // 85% chance
+  makeRequestWithChance("https://api.animalbuttons.biz/snail", 0.95); // 85% chance
   makeRequestWithChance("https://api.animalbuttons.biz/rabbit", 0.6); // 60% chance
-  makeRequestWithChance("https://api.animalbuttons.biz/panda", 0.5); // 50% chance
-  makeRequestWithChance("https://api.animalbuttons.biz/beaver", 0.4); // 40% chance
+  // makeRequestWithChance("https://api.animalbuttons.biz/panda", 0.5); // 50% chance
+  // makeRequestWithChance("https://api.animalbuttons.biz/beaver", 0.4); // 40% chance
 }
